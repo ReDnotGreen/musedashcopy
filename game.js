@@ -317,6 +317,28 @@ function gameLoop() {
                 ctx.font = "bold 20px 'Orbitron', sans-serif";
                 ctx.fillText(`${note.mashCount} / ${note.perfectHits}`, textDrawX, topLaneY + 80);
             }
+
+            // Draw circular progress bar around hit zone if mash is active
+            if (currentTime >= note.time && currentTime <= targetEndTime) {
+                const centerX = hitZoneX + 25;
+                const centerY = (topLaneY + bottomLaneY) / 2 + 25;
+                const radius = 35;
+                const progress = Math.min(note.mashCount / note.perfectHits, 1); // Cap at 1
+
+                // Background circle
+                ctx.strokeStyle = "#333";
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+                ctx.stroke();
+
+                // Progress arc
+                ctx.strokeStyle = progress >= 1 ? "#39ff14" : (note.mashCount >= note.goodHits ? "#ff00ff" : "#ffaa00");
+                ctx.lineWidth = 5;
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius, -Math.PI / 2, -Math.PI / 2 + progress * 2 * Math.PI);
+                ctx.stroke();
+            }
         }
 
         if (note.type === 'long') {
@@ -341,7 +363,14 @@ function gameLoop() {
                 ctx.fillStyle = "black"; ctx.font = "bold 30px Orbitron"; ctx.fillText("⚡", headX + 10, enemyY + 36); 
             }
             else { 
-                ctx.fillStyle = note.missed ? "#333" : (note.type === 'glitch' ? "#00ffff" : "#ff00ff"); 
+                // --- UPDATED: Glitch flicker effect in fake lane ---
+                if (note.type === 'glitch' && drawLane !== note.lane) {
+                    // Flicker effect: rapid color alternation for telegraphing
+                    let flicker = Math.sin(currentTime * 20) > 0; // Fast flicker based on time
+                    ctx.fillStyle = flicker ? "#ff0000" : "#00ffff"; // Red flicker to indicate fake lane
+                } else {
+                    ctx.fillStyle = note.missed ? "#333" : (note.type === 'glitch' ? "#00ffff" : "#ff00ff"); 
+                }
                 ctx.fillRect(headX, enemyY, 50, 50); 
             }
         }
