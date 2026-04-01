@@ -194,3 +194,162 @@ button:hover {
 #howToPlayModal {
     min-width: 550px;
 }
+
+/* --- VISUAL EDITOR STYLES --- */
+#editorContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background: var(--dark-bg);
+}
+
+#editorHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #111;
+    border-bottom: 2px solid var(--neon-cyan);
+}
+
+#editorWorkspace {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+#editorSidebar {
+    width: 300px;
+    padding: 20px;
+    background: #1a1a1a;
+    border-right: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.tool-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tool-btn {
+    font-size: 10px;
+    padding: 8px;
+    border: 1px solid #555;
+    color: #ccc;
+}
+.tool-btn:hover { border-color: var(--neon-cyan); color: var(--neon-cyan); transform: none;}
+
+#jsonOutput {
+    flex: 1;
+    background: #0a0a0c;
+    color: var(--neon-green);
+    border: 1px solid #444;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+}
+
+/* The Timeline UI */
+#timelineWrapper {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    padding: 50px 20px;
+}
+
+#timeline {
+    position: relative;
+    height: 200px;
+    background-image: linear-gradient(90deg, #333 1px, transparent 1px);
+    background-size: 50px 100%; /* Represents a 0.25s grid snap */
+    min-width: 100%;
+}
+
+.editor-lane {
+    height: 100px;
+    border-bottom: 2px dashed #444;
+    position: relative;
+}
+
+.lane-label {
+    position: sticky;
+    left: 10px;
+    top: 40px;
+    color: #555;
+    font-weight: bold;
+    z-index: 10;
+}
+
+#playhead {
+    position: absolute;
+    top: -20px;
+    bottom: -20px;
+    width: 2px;
+    background: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+    z-index: 50;
+    left: 0;
+    pointer-events: none; /* Let clicks pass through to the timeline */
+}
+
+/* Draggable Note Blocks */
+.ui-note {
+    position: absolute;
+    top: 25px;
+    height: 50px;
+    width: 20px; /* Default width */
+    border-radius: 4px;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: black;
+    font-weight: bold;
+    user-select: none;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    z-index: 20;
+}
+
+.ui-note:active { cursor: grabbing; z-index: 30; outline: 2px solid white; }
+.ui-note.lane-both { top: 25px; height: 150px; } /* Stretches across both lanes */
+
+/* Note Type Colors */
+.bg-short { background: var(--neon-pink); }
+.bg-long { background: #aa00aa; } /* REMOVED hardcoded width */
+.bg-sync { background: var(--neon-cyan); }
+.bg-mash { background: #ffaa00; } /* REMOVED hardcoded width */
+.bg-hazard { background: #ff0000; }
+.bg-emp { background: white; }
+.bg-glitch { background: #00ffff; }
+.bg-ghost { background: #888; border: 1px solid white; color: white;}
+
+/* --- NEW: Resize Handle for Long/Mash Notes --- */
+.resize-handle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: ew-resize; /* Shows the left/right arrow cursor */
+    border-radius: 0 4px 4px 0;
+    z-index: 40;
+}
+.resize-handle:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.editor-info {
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 10px;
+    line-height: 1.6;
+}

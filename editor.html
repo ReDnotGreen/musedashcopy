@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Run - Visual Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="editorContainer">
+        <div id="editorHeader">
+            <h1 style="color: #00ffff; margin: 0;">VISUAL BEATMAP EDITOR</h1>
+            <div style="display: flex; gap: 10px;">
+                <button id="playPauseBtn" style="border-color: #39ff14; color: #39ff14;">PLAY AUDIO</button>
+                <button id="exportBtn" style="border-color: #ff00ff; color: #ff00ff;">EXPORT JSON</button>
+                <a href="index.html"><button style="border-color: white; color: white;">BACK TO GAME</button></a>
+            </div>
+        </div>
+
+        <div id="editorWorkspace">
+            <div id="editorSidebar">
+                <h3>SPAWN NOTES</h3>
+                <p style="font-size: 12px; color: #aaa;">Notes spawn at the blue playhead. Drag them to adjust timing.</p>
+                <div class="tool-grid">
+                    <button class="tool-btn" data-type="short" data-lane="top">Top Short</button>
+                    <button class="tool-btn" data-type="short" data-lane="bottom">Bottom Short</button>
+                    <button class="tool-btn" data-type="long" data-lane="top">Top Long</button>
+                    <button class="tool-btn" data-type="long" data-lane="bottom">Bottom Long</button>
+                    <button class="tool-btn" data-type="sync" data-lane="both">Sync (Both)</button>
+                    <button class="tool-btn" data-type="mash" data-lane="both">Mash (Both)</button>
+                    <button class="tool-btn" data-type="hazard" data-lane="bottom">Bottom Hazard</button>
+                    <button class="tool-btn" data-type="emp" data-lane="top">Top EMP</button>
+                    <button class="tool-btn" data-type="glitch" data-lane="top">Top Glitch</button>
+                    <button class="tool-btn" data-type="ghost" data-lane="bottom">Bottom Ghost</button>
+                </div>
+                
+                <div style="margin-top: 10px; margin-bottom: 20px; padding: 15px; background: rgba(0, 255, 255, 0.05); border: 1px solid var(--neon-cyan); border-radius: 6px; font-size: 11px; color: #ccc; line-height: 1.6;">
+                    <h4 style="color: var(--neon-cyan); margin-top: 0; margin-bottom: 10px; letter-spacing: 1px;">HOW TO USE</h4>
+                    <ul style="padding-left: 15px; margin: 0;">
+                        <li><strong>Play/Pause:</strong> Listen to the track.</li>
+                        <li><strong>Seek:</strong> Click the timeline background to move the blue playhead.</li>
+                        <li><strong>Spawn:</strong> Click a button above to spawn a note at the playhead.</li>
+                        <li><strong>Drag:</strong> Move notes left/right (snaps to grid).</li>
+                        <li><strong>Delete:</strong> Right-click a note to remove it.</li>
+                        <li style="color: #ffaa00;"><strong>Rules:</strong> Notes cannot overlap in the same lane!</li>
+                    </ul>
+                </div>
+                
+                <textarea id="jsonOutput" readonly placeholder="JSON will appear here when exported..."></textarea>
+            </div>
+
+            <div id="timelineWrapper">
+                <div id="timeline">
+                    <div id="playhead"></div>
+                    
+                    <div id="lane-top" class="editor-lane">
+                        <span class="lane-label">TOP</span>
+                    </div>
+                    <div id="lane-bottom" class="editor-lane">
+                        <span class="lane-label">BOTTOM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="editor.js"></script>
+</body>
+</html>
