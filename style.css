@@ -1,0 +1,196 @@
+/* Orbitron font for the futuristic look */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+:root {
+    --neon-cyan: #00ffff;
+    --neon-pink: #ff00ff;
+    --neon-green: #39ff14;
+    --dark-bg: #0a0a0c;
+}
+
+body {
+    background-color: var(--dark-bg);
+    background-image: linear-gradient(rgba(0, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: white;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0; padding: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-height: 100vh; overflow: hidden;
+}
+
+h1 {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    letter-spacing: 4px; margin-bottom: 10px; text-transform: uppercase;
+}
+
+canvas {
+    background-color: #111;
+    border: 3px solid var(--neon-pink);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4), inset 0 0 30px rgba(255, 0, 255, 0.1);
+    margin-top: 10px;
+}
+
+/* Updated Button Styles */
+#mainUI { display: flex; gap: 20px; }
+
+button {
+    font-family: 'Orbitron', sans-serif; font-weight: 700; text-transform: uppercase;
+    padding: 12px 24px; font-size: 16px; cursor: pointer;
+    background: transparent; color: var(--neon-cyan);
+    border: 2px solid var(--neon-cyan); border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.3);
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background: var(--neon-cyan); color: var(--dark-bg);
+    box-shadow: 0 0 20px var(--neon-cyan), inset 0 0 20px var(--neon-cyan);
+    transform: scale(1.05);
+}
+
+#startBtn { border-color: var(--neon-cyan); color: var(--neon-cyan); }
+#howToPlayBtn { border-color: var(--neon-pink); color: var(--neon-pink); box-shadow: 0 0 10px rgba(255, 0, 255, 0.3), inset 0 0 10px rgba(255, 0, 255, 0.3); }
+#howToPlayBtn:hover { background: var(--neon-pink); color: var(--dark-bg); box-shadow: 0 0 20px var(--neon-pink), inset 0 0 20px var(--neon-pink); }
+
+/* The share button stays green */
+#shareBtn { background: var(--neon-green); color: black; border: 2px solid var(--neon-green); box-shadow: 0 0 15px rgba(57, 255, 20, 0.5); }
+#shareBtn:hover { background: white; color: black; border-color: white; }
+
+/* Modal Styles for Instructions & End Screen */
+.modal {
+    display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+    background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(8px);
+    padding: 40px; border-radius: 12px; border: 2px solid var(--neon-cyan);
+    box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.4);
+    min-width: 400px; max-width: 80%;
+}
+
+#endScreen { border-color: var(--neon-green); box-shadow: 0px 0px 30px rgba(57, 255, 20, 0.4); }
+#endScreen h2 { color: var(--neon-green); text-shadow: 0 0 10px rgba(57, 255, 20, 0.7); }
+
+.modal ul { text-align: left; line-height: 1.8; color: #ccc; }
+
+#emojiGrid { font-size: 28px; letter-spacing: 8px; background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 8px; border: 1px solid #333; line-height: 1.5; margin: 15px 0; }
+
+/* NEW: Emoji Legend Styling */
+#shareInfo h4 { margin-bottom: 5px; color: #aaa; }
+#emojiLegend { font-size: 22px; cursor: help; background: rgba(255,255,255,0.05); padding: 5px; border-radius: 4px;}
+#emojiLegend span { display: inline-block; transition: transform 0.1s; }
+#emojiLegend span:hover { transform: scale(1.3); }
+
+/* Styling for the Practice Menu List */
+/* Styling for the Practice Menu List */
+#levelList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden; /* NEW: Forces the horizontal slider to stay hidden */
+    padding: 10px; /* Gives the glowing borders room to breathe */
+}
+
+.practice-track-btn {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--neon-cyan);
+    color: white;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    width: 100%; /* Keeps them uniformly sized */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.practice-track-btn:hover {
+    background: var(--neon-cyan);
+    color: var(--dark-bg);
+    transform: none; /* FIX: Stops the button from growing and triggering the scrollbar */
+    box-shadow: 0 0 15px var(--neon-cyan); /* Keep a nice glow instead of scaling */
+}
+
+/* Make the practice button yellow/orange to stand out */
+#practiceBtn { 
+    border-color: #ffaa00; 
+    color: #ffaa00; 
+    box-shadow: 0 0 10px rgba(255, 170, 0, 0.3), inset 0 0 10px rgba(255, 170, 0, 0.3); 
+}
+#practiceBtn:hover { 
+    background: #ffaa00; 
+    color: var(--dark-bg); 
+    box-shadow: 0 0 20px #ffaa00, inset 0 0 20px #ffaa00; 
+}
+
+/* Gray out the start button if they already played today */
+#startBtn:disabled {
+    border-color: #555;
+    color: #555;
+    box-shadow: none;
+    cursor: not-allowed;
+    background: transparent;
+    transform: none;
+}
+
+/* --- Visual Tutorial Styles --- */
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.tutorial-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.note-desc {
+    font-size: 11px;
+    line-height: 1.4;
+    font-family: sans-serif; /* Cleaner for small body text */
+}
+
+.note-desc strong {
+    display: block;
+    color: var(--neon-cyan);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+/* Tutorial Icon Simulation */
+.note-icon {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.note-icon.short { background: var(--neon-pink); box-shadow: 0 0 10px var(--neon-pink); }
+.note-icon.ghost { background: white; box-shadow: 0 0 10px white; }
+.note-icon.long-icon { background: var(--neon-pink); border-right: 15px solid rgba(255, 0, 255, 0.4); width: 15px; }
+.note-icon.glitch-icon { background: var(--neon-cyan); box-shadow: 0 0 10px var(--neon-cyan); }
+.note-icon.sync-icon { border: 2px solid var(--neon-pink); background: linear-gradient(to bottom, var(--neon-pink) 20%, var(--neon-cyan) 20% 80%, var(--neon-pink) 80%); }
+.note-icon.mash-icon { background: #ffaa00; font-size: 8px; color: black; }
+.note-icon.hazard-icon { background: #ff0000; color: black; }
+.note-icon.emp-icon { background: white; color: black; box-shadow: 0 0 15px white; }
+
+/* Adjust modal width for the grid */
+#howToPlayModal {
+    min-width: 550px;
+}

@@ -1,0 +1,118 @@
+[
+  {
+    "songName": "Day 1: Awakening",
+    "bpm": 120,
+    "notes": [
+      { "time": 1.5, "lane": "top", "type": "short" },
+      { "time": 2.5, "lane": "bottom", "type": "short" },
+      { "time": 3.5, "lane": "both", "type": "sync" },
+      { "time": 5.0, "lane": "bottom", "type": "short" },
+      { "time": 6.0, "lane": "both", "type": "mash", "duration": 1.5, "goodHits": 8, "perfectHits": 15 },
+      { "time": 8.5, "lane": "bottom", "type": "hazard" },
+      { "time": 9.5, "lane": "top", "type": "short" },
+      { "time": 10.0, "lane": "both", "type": "sync" }
+    ]
+  },
+  {
+    "songName": "Day 2: Ghost Protocol",
+    "bpm": 130,
+    "notes": [
+      { "time": 1.0, "lane": "bottom", "type": "ghost" },
+      { "time": 2.0, "lane": "top", "type": "glitch" },
+      { "time": 3.0, "lane": "bottom", "type": "glitch" },
+      { "time": 4.0, "lane": "top", "type": "emp" },
+      { "time": 4.5, "lane": "bottom", "type": "short" },
+      { "time": 5.0, "lane": "top", "type": "short" },
+      { "time": 6.5, "lane": "both", "type": "sync" },
+      { "time": 7.5, "lane": "top", "type": "emp" },
+      { "time": 9.0, "lane": "top", "type": "ghost" },
+      { "time": 9.0, "lane": "bottom", "type": "ghost" }
+    ]
+  },
+  {
+    "songName": "Day 3: System Overload",
+    "bpm": 140,
+    "notes": [
+      { "time": 1.0, "lane": "top", "type": "glitch" },
+      { "time": 1.5, "lane": "bottom", "type": "emp" },
+      { "time": 2.0, "lane": "top", "type": "glitch" },
+      { "time": 2.5, "lane": "bottom", "type": "emp" },
+      { "time": 3.5, "lane": "both", "type": "mash", "duration": 2.0, "goodHits": 12, "perfectHits": 25 },
+      { "time": 6.0, "lane": "both", "type": "sync" },
+      { "time": 6.5, "lane": "bottom", "type": "short" },
+      { "time": 7.0, "lane": "bottom", "type": "short" },
+      { "time": 8.5, "lane": "both", "type": "sync" },
+      { "time": 9.5, "lane": "both", "type": "mash", "duration": 1.5, "goodHits": 10, "perfectHits": 18 }
+    ]
+  },
+  {
+    "songName": "Day 4: Neon Blitz",
+    "bpm": 160,
+    "notes": [
+      { "time": 1.0, "lane": "top", "type": "short" },
+      { "time": 1.2, "lane": "bottom", "type": "short" },
+      { "time": 1.4, "lane": "top", "type": "short" },
+      { "time": 1.6, "lane": "bottom", "type": "short" },
+      { "time": 2.5, "lane": "both", "type": "sync" },
+      { "time": 3.5, "lane": "top", "type": "ghost" },
+      { "time": 3.7, "lane": "bottom", "type": "ghost" },
+      { "time": 3.9, "lane": "top", "type": "ghost" },
+      { "time": 4.1, "lane": "bottom", "type": "ghost" },
+      { "time": 5.0, "lane": "both", "type": "mash", "duration": 1.5, "goodHits": 15, "perfectHits": 28 },
+      { "time": 7.5, "lane": "top", "type": "hazard" },
+      { "time": 7.7, "lane": "bottom", "type": "short" },
+      { "time": 7.9, "lane": "bottom", "type": "short" },
+      { "time": 8.5, "lane": "top", "type": "glitch" },
+      { "time": 8.7, "lane": "bottom", "type": "short" },
+      { "time": 8.9, "lane": "top", "type": "glitch" },
+      { "time": 9.1, "lane": "bottom", "type": "short" },
+      { "time": 10.0, "lane": "both", "type": "sync" }
+    ]
+  },
+  {
+    "songName": "Day 5: Sensory Deprivation",
+    "bpm": 150,
+    "notes": [
+      { "time": 1.0, "lane": "bottom", "type": "emp" },
+      { "time": 1.5, "lane": "top", "type": "ghost" },
+      { "time": 2.0, "lane": "both", "type": "sync" },
+      { "time": 3.0, "lane": "top", "type": "emp" },
+      { "time": 3.5, "lane": "bottom", "type": "glitch" },
+      { "time": 4.0, "lane": "top", "type": "long", "duration": 1.0 },
+      { "time": 4.0, "lane": "bottom", "type": "hazard" },
+      { "time": 5.5, "lane": "both", "type": "sync" },
+      { "time": 6.0, "lane": "both", "type": "sync" },
+      { "time": 7.0, "lane": "bottom", "type": "emp" },
+      { "time": 7.5, "lane": "top", "type": "short" },
+      { "time": 7.8, "lane": "bottom", "type": "short" },
+      { "time": 8.1, "lane": "top", "type": "short" },
+      { "time": 8.4, "lane": "both", "type": "sync" },
+      { "time": 9.5, "lane": "both", "type": "mash", "duration": 2.0, "goodHits": 20, "perfectHits": 35 }
+    ]
+  },
+  {
+    "songName": "Day 6: The Gauntlet",
+    "bpm": 170,
+    "notes": [
+      { "time": 1.0, "lane": "both", "type": "sync" },
+      { "time": 1.2, "lane": "top", "type": "short" },
+      { "time": 1.4, "lane": "bottom", "type": "hazard" },
+      { "time": 1.6, "lane": "both", "type": "sync" },
+      { "time": 2.5, "lane": "both", "type": "mash", "duration": 1.0, "goodHits": 12, "perfectHits": 22 },
+      { "time": 4.0, "lane": "top", "type": "glitch" },
+      { "time": 4.2, "lane": "bottom", "type": "glitch" },
+      { "time": 4.4, "lane": "top", "type": "glitch" },
+      { "time": 4.6, "lane": "bottom", "type": "glitch" },
+      { "time": 5.5, "lane": "top", "type": "emp" },
+      { "time": 6.0, "lane": "both", "type": "sync" },
+      { "time": 6.2, "lane": "both", "type": "sync" },
+      { "time": 6.4, "lane": "both", "type": "sync" },
+      { "time": 8.0, "lane": "top", "type": "long", "duration": 2.0 },
+      { "time": 8.0, "lane": "bottom", "type": "ghost" },
+      { "time": 8.5, "lane": "bottom", "type": "ghost" },
+      { "time": 9.0, "lane": "bottom", "type": "hazard" },
+      { "time": 9.5, "lane": "bottom", "type": "ghost" },
+      { "time": 11.0, "lane": "both", "type": "mash", "duration": 2.0, "goodHits": 25, "perfectHits": 45 }
+    ]
+  }
+]

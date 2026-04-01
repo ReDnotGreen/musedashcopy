@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Run - Rhythm Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="gameContainer">
+        <h1>NEON RUN</h1>
+        
+        <div id="mainUI">
+            <button id="startBtn">PLAY TODAY</button>
+            <button id="practiceBtn">PRACTICE</button>
+            <button id="howToPlayBtn">HOW TO PLAY</button>
+        </div>
+        <br>
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+    </div>
+
+    <div id="howToPlayModal" class="modal">
+    <h2>SYSTEM TUTORIAL</h2>
+    <div class="tutorial-grid">
+        <div class="tutorial-item">
+            <div class="note-icon short"></div>
+            <div class="note-desc"><strong>Data Fragment</strong> Standard note. Tap ↑ or ↓.</div>
+        </div>
+        <div class="tutorial-item">
+            <div class="note-icon ghost"></div>
+            <div class="note-desc"><strong>Ghost</strong> Fades in late. Watch the rhythm!</div>
+        </div>
+        <div class="tutorial-item">
+            <div class="note-icon long-icon"></div>
+            <div class="note-desc"><strong>Link Note</strong> Hold key and release on time.</div>
+        </div>
+        <div class="tutorial-item">
+            <div class="note-icon glitch-icon"></div>
+            <div class="note-desc"><strong>Glitch</strong> Teleports lanes at 0.6s. Stay sharp!</div>
+        </div>
+        <div class="tutorial-item">
+            <div class="note-icon sync-icon"></div>
+            <div class="note-desc"><strong>Sync</strong> Vertical tether. Hit ↑ AND ↓ together.</div>
+        </div>
+        <div class="tutorial-item">
+            <div class="note-icon mash-icon">MASH</div>
+            <div class="note-desc"><strong>Overload</strong> Hammer both keys! Hit the targets.</div>
+        </div>
+        <div class="tutorial-item">
+            <div class="note-icon hazard-icon">X</div>
+            <div class="note-desc"><strong>Hazard</strong> Avoid at all costs. Breaks combo.</div>
+        </div>
+        <div class="tutorial-item">
+            <div class="note-icon emp-icon">⚡</div>
+            <div class="note-desc"><strong>EMP</strong> Dangerous! Hitting it blinds your view.</div>
+        </div>
+    </div>
+    <button id="closeInstructionsBtn" style="margin-top: 20px;">READY TO RUN</button>
+    </div>
+
+    <div id="practiceModal" class="modal">
+        <h2>SELECT A TRACK</h2>
+        <div id="levelList"></div>
+        <button id="closePracticeBtn" style="margin-top: 20px;">CLOSE</button>
+    </div>
+
+    <div id="endScreen" class="modal">
+        <h2>LEVEL COMPLETE</h2>
+        <h3 id="finalScoreText"></h3>
+        
+        <div id="shareInfo">
+            <h4>SHARE PREVIEW</h4>
+            <div id="emojiLegend">
+                Hover: 
+                <span title="Perfect Hit (+100, +HP)">🟩</span>
+                <span title="Good Hit (+50)">🟨</span>
+                <span title="Miss or Drop (-10 HP)">🟥</span>
+                <span title="Avoided Hazard (+50)">⬜</span>
+                <span title="Hit Hazard (-HP)">💥</span>
+            </div>
+        </div>
+
+        <pre id="emojiGrid"></pre>
+        <button id="shareBtn">COPY TO CLIPBOARD</button>
+        <button id="menuBtn" style="margin-top: 15px; background: transparent; border-color: var(--neon-pink); color: var(--neon-pink);">MAIN MENU</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
