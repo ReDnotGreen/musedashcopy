@@ -87,7 +87,7 @@
       { "time": 7.8, "lane": "bottom", "type": "short" },
       { "time": 8.1, "lane": "top", "type": "short" },
       { "time": 8.4, "lane": "both", "type": "sync" },
-      { "time": 9.5, "lane": "both", "type": "mash", "duration": 2.0, "goodHits": 20, "perfectHits": 35 }
+      { "time": 9.5, "lane": "both", "type": "mash", "duration": 2.0, "goodHits": 15, "perfectHits": 30 }
     ]
   },
   {
@@ -112,7 +112,7 @@
       { "time": 8.5, "lane": "bottom", "type": "ghost" },
       { "time": 9.0, "lane": "bottom", "type": "hazard" },
       { "time": 9.5, "lane": "bottom", "type": "ghost" },
-      { "time": 11.0, "lane": "both", "type": "mash", "duration": 2.0, "goodHits": 25, "perfectHits": 45 }
+      { "time": 11.0, "lane": "both", "type": "mash", "duration": 2.0, "goodHits": 15, "perfectHits": 30 }
     ]
   }
 ]
