@@ -2,6 +2,7 @@
   {
     "songName": "Day 1: Awakening",
     "bpm": 120,
+    "audioFile": "track.mp3",
     "notes": [
       { "time": 1.5, "lane": "top", "type": "short" },
       { "time": 2.5, "lane": "bottom", "type": "short" },
@@ -16,6 +17,7 @@
   {
     "songName": "Day 2: Ghost Protocol",
     "bpm": 130,
+    "audioFile": "track.mp3",
     "notes": [
       { "time": 1.0, "lane": "bottom", "type": "ghost" },
       { "time": 2.0, "lane": "top", "type": "glitch" },
@@ -32,6 +34,7 @@
   {
     "songName": "Day 3: System Overload",
     "bpm": 140,
+    "audioFile": "track.mp3",
     "notes": [
       { "time": 1.0, "lane": "top", "type": "glitch" },
       { "time": 1.5, "lane": "bottom", "type": "emp" },
@@ -48,6 +51,7 @@
   {
     "songName": "Day 4: Neon Blitz",
     "bpm": 160,
+    "audioFile": "track.mp3",
     "notes": [
       { "time": 1.0, "lane": "top", "type": "short" },
       { "time": 1.2, "lane": "bottom", "type": "short" },
@@ -72,6 +76,7 @@
   {
     "songName": "Day 5: Sensory Deprivation",
     "bpm": 150,
+    "audioFile": "track.mp3",
     "notes": [
       { "time": 1.0, "lane": "bottom", "type": "emp" },
       { "time": 1.5, "lane": "top", "type": "ghost" },
@@ -93,6 +98,7 @@
   {
     "songName": "Day 6: The Gauntlet",
     "bpm": 170,
+    "audioFile": "track.mp3",
     "notes": [
       { "time": 1.0, "lane": "both", "type": "sync" },
       { "time": 1.2, "lane": "top", "type": "short" },

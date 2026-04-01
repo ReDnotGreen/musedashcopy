@@ -114,7 +114,11 @@ async function startRun(isPractice, mapIndex) {
     }));
 
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const response = await fetch('track.mp3'); 
+    
+    // --- UPDATED: Load specific audio file, fallback to track.mp3 if missing ---
+    const trackFile = songDetails.audioFile || 'track.mp3';
+    const response = await fetch(trackFile); 
+    
     const buffer = await response.arrayBuffer();
     audioBuffer = await audioContext.decodeAudioData(buffer);
 

@@ -1,6 +1,10 @@
 const playPauseBtn = document.getElementById('playPauseBtn');
 const importBtn = document.getElementById('importBtn');
 const exportBtn = document.getElementById('exportBtn');
+const trackInput = document.getElementById('trackInput'); // NEW
+const loadTrackBtn = document.getElementById('loadTrackBtn'); // NEW
+
+
 const jsonOutput = document.getElementById('jsonOutput');
 const timeline = document.getElementById('timeline');
 const playhead = document.getElementById('playhead');
@@ -65,14 +69,39 @@ function checkOverlap(newTime, lane, type, ignoreId = -1) {
 
 // --- AUDIO SYSTEM ---
 async function loadAudio() {
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    const response = await fetch('track.mp3'); 
-    const arrayBuffer = await response.arrayBuffer();
-    audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-    
-    // Set timeline width based on song duration
-    timeline.style.width = `${audioBuffer.duration * PIXELS_PER_SECOND}px`;
+    try {
+        const trackName = trackInput.value.trim() || 'track.mp3';
+        
+        // Stop current audio if we are loading a new one
+        if (isPlaying && audioSource) {
+            audioSource.stop();
+            isPlaying = false;
+            playPauseBtn.innerText = "PLAY";
+            playPauseBtn.style.color = "#39ff14";
+        }
+
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const response = await fetch(trackName); 
+        
+        if (!response.ok) throw new Error("File not found");
+
+        const arrayBuffer = await response.arrayBuffer();
+        audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+        
+        // Resize timeline to fit new song length
+        timeline.style.width = `${audioBuffer.duration * PIXELS_PER_SECOND}px`;
+        
+    } catch(error) {
+        alert(`Error loading audio file '${trackInput.value}'. Make sure the file exists in the game!`);
+    }
 }
+
+// Connect the manual load button
+loadTrackBtn.addEventListener('click', () => {
+    pauseTime = 0; // Reset playhead
+    playhead.style.left = "0px";
+    loadAudio();
+});
 
 playPauseBtn.addEventListener('click', async () => {
     if (!audioContext) await loadAudio();
@@ -299,6 +328,7 @@ exportBtn.addEventListener('click', () => {
     const outputObj = {
         songName: "My Custom Beatmap",
         bpm: 120,
+        audioFile: trackInput.value.trim() || "track.mp3", // NEW: Saves the audio file name
         notes: cleanNotes
     };
 
@@ -411,7 +441,7 @@ function onResizeMouseUp(e) {
 }
 
 // --- NEW: IMPORT JSON ---
-importBtn.addEventListener('click', () => {
+importBtn.addEventListener('click', async () => {
     // 1. Get the text from the box
     const rawJSON = jsonOutput.value.trim();
     
@@ -433,6 +463,12 @@ importBtn.addEventListener('click', () => {
         // 4. Wipe the current editor slate clean
         beatmapNotes = [];
         noteIdCounter = 0;
+
+        // --- NEW: Load the track attached to the imported JSON ---
+        if (importedData.audioFile) {
+            trackInput.value = importedData.audioFile;
+            await loadAudio(); // Wait for the new audio to load before rendering
+        }
 
         // 5. Rebuild the notes array, giving them fresh editor IDs
         importedData.notes.forEach(note => {
