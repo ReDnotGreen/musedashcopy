@@ -12,14 +12,17 @@
         <div id="editorHeader">
             <h1 style="color: #00ffff; margin: 0;">VISUAL BEATMAP EDITOR</h1>
             <div style="display: flex; gap: 10px; align-items: center;">
-                <label for="trackInput" style="color: white; font-size: 12px; font-weight: bold;">AUDIO FILE:</label>
-                <input type="text" id="trackInput" value="track.mp3" style="background: #222; color: #00ffff; border: 1px solid #00ffff; padding: 8px; border-radius: 4px; outline: none; width: 150px; font-family: monospace;">
-                <button id="loadTrackBtn" style="border-color: yellow; color: yellow;">LOAD AUDIO</button>
+                <label for="trackInput" style="color: white; font-size: 12px; font-weight: bold;">AUDIO:</label>
+                <input type="text" id="trackInput" value="track.mp3" style="background: #222; color: #00ffff; border: 1px solid #00ffff; padding: 8px; border-radius: 4px; outline: none; width: 120px; font-family: monospace;">
+                <button id="loadTrackBtn" style="border-color: yellow; color: yellow;">LOAD WEB FILE</button>
+                
+                <input type="file" id="localAudioUpload" accept="audio/mpeg, audio/mp3, audio/wav" style="display: none;">
+                <button id="autoMapBtn" style="border-color: #ffaa00; color: #ffaa00; font-weight: bold;">🪄 AUTO-MAP LOCAL MP3</button>
                 
                 <div style="width: 2px; height: 30px; background: #444; margin: 0 10px;"></div> <button id="playPauseBtn" style="border-color: #39ff14; color: #39ff14;">PLAY</button>
-                <button id="importBtn" style="border-color: #00ffff; color: #00ffff;">IMPORT JSON</button>
-                <button id="exportBtn" style="border-color: #ff00ff; color: #ff00ff;">EXPORT JSON</button>
-                <a href="index.html"><button style="border-color: white; color: white;">BACK TO GAME</button></a>
+                <button id="importBtn" style="border-color: #00ffff; color: #00ffff;">IMPORT</button>
+                <button id="exportBtn" style="border-color: #ff00ff; color: #ff00ff;">EXPORT</button>
+                <a href="index.html"><button style="border-color: white; color: white;">BACK</button></a>
             </div>
         </div>
 
@@ -70,6 +73,7 @@
         </div>
     </div>
 
+    <script src="autoMapper.js"></script>
     <script src="editor.js"></script>
 </body>
 </html>

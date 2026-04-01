@@ -120,5 +120,369 @@
       { "time": 9.5, "lane": "bottom", "type": "ghost" },
       { "time": 11.0, "lane": "both", "type": "mash", "duration": 2.0, "goodHits": 15, "perfectHits": 30 }
     ]
-  }
+  },
+  {
+  "songName": "My Custom Beatmap",
+  "bpm": 120,
+  "audioFile": "track.mp3",
+  "notes": [
+    {
+      "time": 2.1,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 2.35,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 2.59,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 2.93,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 3.2,
+      "lane": "top",
+      "type": "ghost"
+    },
+    {
+      "time": 3.5,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 3.73,
+      "lane": "bottom",
+      "type": "glitch"
+    },
+    {
+      "time": 4.05,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 4.32,
+      "lane": "top",
+      "type": "ghost"
+    },
+    {
+      "time": 4.71,
+      "lane": "bottom",
+      "type": "ghost"
+    },
+    {
+      "time": 4.92,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 5.31,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 5.62,
+      "lane": "bottom",
+      "type": "ghost"
+    },
+    {
+      "time": 6.2,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 6.51,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 6.93,
+      "lane": "bottom",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 7.69,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 7.92,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 8.18,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 8.4,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 8.79,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 9,
+      "lane": "bottom",
+      "type": "glitch"
+    },
+    {
+      "time": 9.23,
+      "lane": "bottom",
+      "type": "glitch"
+    },
+    {
+      "time": 9.48,
+      "lane": "top",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 10.25,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 10.57,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 10.82,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 11.27,
+      "lane": "bottom",
+      "type": "ghost"
+    },
+    {
+      "time": 11.48,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 11.69,
+      "lane": "bottom",
+      "type": "glitch"
+    },
+    {
+      "time": 11.91,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 12.13,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 12.44,
+      "lane": "top",
+      "type": "ghost"
+    },
+    {
+      "time": 12.76,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 13.04,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 13.25,
+      "lane": "bottom",
+      "type": "glitch"
+    },
+    {
+      "time": 13.49,
+      "lane": "bottom",
+      "type": "glitch"
+    },
+    {
+      "time": 13.75,
+      "lane": "top",
+      "type": "ghost"
+    },
+    {
+      "time": 14.15,
+      "lane": "top",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 14.95,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 15.16,
+      "lane": "bottom",
+      "type": "glitch"
+    },
+    {
+      "time": 15.44,
+      "lane": "bottom",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 16.26,
+      "lane": "bottom",
+      "type": "ghost"
+    },
+    {
+      "time": 16.49,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 16.74,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 17.12,
+      "lane": "bottom",
+      "type": "emp"
+    },
+    {
+      "time": 17.39,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 17.61,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 17.85,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 18.21,
+      "lane": "top",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 19.03,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 19.31,
+      "lane": "top",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 20.1,
+      "lane": "both",
+      "type": "mash",
+      "duration": 1,
+      "goodHits": 8,
+      "perfectHits": 15
+    },
+    {
+      "time": 21.4,
+      "lane": "top",
+      "type": "ghost"
+    },
+    {
+      "time": 21.86,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 22.07,
+      "lane": "top",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 22.84,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 23.07,
+      "lane": "bottom",
+      "type": "glitch"
+    },
+    {
+      "time": 23.39,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 23.66,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 23.87,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 24.18,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 24.7,
+      "lane": "bottom",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 25.63,
+      "lane": "bottom",
+      "type": "short"
+    },
+    {
+      "time": 25.88,
+      "lane": "top",
+      "type": "glitch"
+    },
+    {
+      "time": 26.19,
+      "lane": "top",
+      "type": "long",
+      "duration": 0.5
+    },
+    {
+      "time": 26.97,
+      "lane": "top",
+      "type": "ghost"
+    },
+    {
+      "time": 27.27,
+      "lane": "top",
+      "type": "short"
+    },
+    {
+      "time": 27.49,
+      "lane": "bottom",
+      "type": "glitch"
+    }
+  ]
+}
 ]
