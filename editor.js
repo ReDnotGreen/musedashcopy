@@ -1,10 +1,12 @@
 const playPauseBtn = document.getElementById('playPauseBtn');
+const importBtn = document.getElementById('importBtn');
 const exportBtn = document.getElementById('exportBtn');
 const jsonOutput = document.getElementById('jsonOutput');
 const timeline = document.getElementById('timeline');
 const playhead = document.getElementById('playhead');
 const laneTop = document.getElementById('lane-top');
 const laneBottom = document.getElementById('lane-bottom');
+
 
 let audioContext;
 let audioBuffer;
@@ -407,5 +409,59 @@ function onResizeMouseUp(e) {
     // Re-render to finalize layout and ensure JSON gets updated on export
     renderNotes(); 
 }
+
+// --- NEW: IMPORT JSON ---
+importBtn.addEventListener('click', () => {
+    // 1. Get the text from the box
+    const rawJSON = jsonOutput.value.trim();
+    
+    if (!rawJSON) {
+        alert("Please paste your JSON into the text box first!");
+        return;
+    }
+
+    try {
+        // 2. Try to parse it
+        const importedData = JSON.parse(rawJSON);
+
+        // 3. Validate that it's actually a beatmap
+        if (!importedData.notes || !Array.isArray(importedData.notes)) {
+            alert("Invalid format! Make sure you are pasting a complete track object (with 'songName' and 'notes').");
+            return;
+        }
+
+        // 4. Wipe the current editor slate clean
+        beatmapNotes = [];
+        noteIdCounter = 0;
+
+        // 5. Rebuild the notes array, giving them fresh editor IDs
+        importedData.notes.forEach(note => {
+            beatmapNotes.push({
+                ...note,
+                id: noteIdCounter++
+            });
+        });
+
+        // 6. Redraw the visual timeline
+        renderNotes();
+
+        // Visual feedback for success
+        const originalText = importBtn.innerText;
+        importBtn.innerText = "LOADED SUCCESSFULLY!";
+        importBtn.style.color = "white";
+        importBtn.style.borderColor = "white";
+        
+        setTimeout(() => { 
+            importBtn.innerText = originalText; 
+            importBtn.style.color = "#00ffff";
+            importBtn.style.borderColor = "#00ffff";
+        }, 2000);
+
+    } catch (error) {
+        // If they pasted broken code, catch the error so the page doesn't crash
+        alert("Syntax Error! The JSON you pasted is broken or incomplete. Check for missing commas or brackets.");
+        console.error("Import Error:", error);
+    }
+});
 
 loadAudio();
